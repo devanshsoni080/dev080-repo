@@ -1,4 +1,4 @@
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
   $(document).ready(function () {
     function getdata(type, select_booking_code) {
@@ -31,43 +31,4 @@
   });
 </script>
 
-<div id="view"></div> -->
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
-<script>
-  $(document).ready(function () {
-    function getdata(type = "defaultType", select_booking_code = "defaultBookingCode") {
-      var server_url = "https://dev080-repo.vercel.app/api.php";
-
-      $.ajax({
-        url: server_url,
-        type: "post",
-        data: {
-          type: type,
-          select_booking_code: select_booking_code,
-        },
-        success: function (data) {
-          if (type == "setinput") {
-            $("#send_dat").html(data);
-          } else {
-            $("#view").append(data);
-          }
-        },
-        error: function (xhr, status, error) {
-          console.log("Error: " + error);
-        },
-      });
-    }
-
-    getdata();
-
-    // Uncomment this for change event functionality
-    // $("#select_booking_code").on("change", function () {
-    //   var select_booking_code = $("#select_booking_code").val();
-    //   getdata("setinput", select_booking_code);
-    // });
-  });
-</script>
-
 <div id="view"></div>
-<div id="send_dat"></div>

@@ -8,6 +8,8 @@ header("Access-Control-Allow-Origin: *"); // Allow all origins
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS"); // Allow specific methods
 header("Access-Control-Allow-Headers: Content-Type"); // Allow specific headers
 
+header("Access-Control-Allow-Origin: http://127.0.0.1:5500");
+
 
 if($_POST['type'] == "")
 {
